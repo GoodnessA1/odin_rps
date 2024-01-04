@@ -5,39 +5,39 @@ function getComputerChoice() {
 	return (choice[x]);
 }
 
+const player = document.querySelector("#player");
+const computer = document.querySelector("computer");
+const p = document.querySelector("#scc");
+const button = document.querySelector("button");
+
 var playerScore = 0;
 var computerScore = 0;
 
 function playRound(playerSelection, computerSelection) {
 	if (playerSelection == computerSelection) {
-		console.log(`It is a tie, please play again`);
 		return (2);
 	}
 
 	else if ((computerSelection == "rock") && (playerSelection == "paper") || (computerSelection == "scissors") && (playerSelection == "rock") || (computerSelection == "paper") && (playerSelection == "scissors"))
 	{
 		playerScore++;
-		console.log(`You: ${playerScore} , computer: ${computerScore}`);
+		player.textContent = playerScore;
 		return (1);
 	}
 
 	else {
 		computerScore++;
-		console.log(`You: ${playerScore} , computer: ${computerScore}`);
+		computer.textContent = computerScore;
 		return (0);
 	}
 }
 
-var inc = 0;
-
-while (inc < 5) {
-	var playerSelection = (prompt("Enter Your Play (rock paper scissors): ")).toLowerCase();
+while (playerScore != 5 || computerScore != 5) {
+	var playerSelection = button.value;
 	var computerSelection = getComputerChoice();
 	var gamePlay = playRound(playerSelection, computerSelection);
 	if (gamePlay == 2)
 	{
 		gamePlay = playRound(playerSelection, computerSelection);
 	}
-
-	inc++;
 }

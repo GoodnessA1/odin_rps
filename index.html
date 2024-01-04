@@ -4,9 +4,32 @@
 		<meta charset="utf-8">
 		<title>Odin Rock Paper Scissors</title>
 		<link rel="stylesheet" href="style.css">
-		<script src="script.js"></script>
 	</head>
 
 	<body>
+		<div id="container">
+			<h1>Rock-Paper-Scissors</h1>
+			<div id="score">
+				<span>
+					<h2>YOU</h2>
+					<h3 id="player">0</h3>
+				</span>
+				<span>
+					<h2>Computer</h2>
+					<h3 id="computer">0</h3>
+				</span>
+			</div>
+			<div id="choice">	
+				<button value="rock">ROCK</button>
+				<button value="paper">PAPER</button>
+				<button value="scissors">SCISSORS</button>
+			</div>
+
+			<p id="cc">Computer played: <span id="scc"></span></p>
+			<p id=winner></p>
+
+		</div>
+		<!-- JavaScript File -->
+		<script src="script.js"></script>
 	</body>
 </html>
